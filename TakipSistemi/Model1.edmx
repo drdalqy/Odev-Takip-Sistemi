@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TakipSistemiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CalismaProgrami">
+          <Key>
+            <PropertyRef Name="ProgramİD" />
+          </Key>
+          <Property Name="ProgramİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DersAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Konu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KonuyubitirmeTarihi" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Odevler">
+          <Key>
+            <PropertyRef Name="Odevid" />
+          </Key>
+          <Property Name="Odevid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DersAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OdevBaslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OdevKonusu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TeslimTarihi" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TakipSistemiModelStoreContainer">
+          <EntitySet Name="CalismaProgrami" EntityType="Self.CalismaProgrami" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odevler" EntityType="Self.Odevler" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TakipSistemiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CalismaProgrami">
+          <Key>
+            <PropertyRef Name="ProgramİD" />
+          </Key>
+          <Property Name="ProgramİD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KonuyubitirmeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Odevler">
+          <Key>
+            <PropertyRef Name="Odevid" />
+          </Key>
+          <Property Name="Odevid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DersAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OdevBaslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OdevKonusu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeslimTarihi" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="TakipSistemiEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CalismaProgrami" EntityType="Self.CalismaProgrami" />
+          <EntitySet Name="Odevler" EntityType="Self.Odevler" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TakipSistemiModelStoreContainer" CdmEntityContainer="TakipSistemiEntities1">
+          <EntitySetMapping Name="CalismaProgrami">
+            <EntityTypeMapping TypeName="TakipSistemiModel.CalismaProgrami">
+              <MappingFragment StoreEntitySet="CalismaProgrami">
+                <ScalarProperty Name="ProgramİD" ColumnName="ProgramİD" />
+                <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="KonuyubitirmeTarihi" ColumnName="KonuyubitirmeTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Odevler">
+            <EntityTypeMapping TypeName="TakipSistemiModel.Odevler">
+              <MappingFragment StoreEntitySet="Odevler">
+                <ScalarProperty Name="Odevid" ColumnName="Odevid" />
+                <ScalarProperty Name="DersAdi" ColumnName="DersAdi" />
+                <ScalarProperty Name="OdevBaslik" ColumnName="OdevBaslik" />
+                <ScalarProperty Name="OdevKonusu" ColumnName="OdevKonusu" />
+                <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
