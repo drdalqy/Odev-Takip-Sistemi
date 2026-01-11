@@ -19,5 +19,9 @@ basit bir masaüstü uygulamasıdır.
 Bu proje, C# WinForms ve Entity Framework kullanarak 
 CRUD işlemlerini öğrenmek ve masaüstü uygulama geliştirme pratiği kazanmak amacıyla geliştirilmiştir.
 
+## Veritabanı
+Uygulama SQL Server kullanmaktadır.  
+Gerekli tablo yapıları `database.sql` dosyasında yer almaktadır.
+
 ## Ekran Görüntüsü
 ![Uygulama Görünümü](screenshot.png)
